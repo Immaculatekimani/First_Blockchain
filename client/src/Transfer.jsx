@@ -17,6 +17,9 @@ function Transfer({ address, setBalance }) {
         sender: address,
         amount: parseInt(sendAmount),
         recipient,
+        signature,
+        recoveryBit,
+        hexMessage
       });
       setBalance(balance);
     } catch (ex) {
@@ -44,7 +47,7 @@ function Transfer({ address, setBalance }) {
     setSignature(signature);
     const recoveryBit = signatureArray[1];
     setRecoveryBit(recoveryBit);
-    
+
     }catch(error){
       console.log(error);
       alert(error);
